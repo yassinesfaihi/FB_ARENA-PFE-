@@ -66,8 +66,13 @@ class ReservationsController extends Controller
         $events->end_date = $request->get('end_date');
         $events->client_id = $request->input('client_id');
         $events->pitch_id = $request->input('pitch_id');
-        $events->color = $request->input('color');
+        if ($request->get('type')=='match') {
+            $events->color = '#0D2BD2';
+        } else {
+            $events->color = '#069322';
 
+        }
+        
         $events->save();
         return redirect('Reservations')->with('success', 'réservation créer avec succès');
     }
@@ -82,7 +87,7 @@ class ReservationsController extends Controller
     {
         $clients = Client::all();
         $pitchs = Pitch::all();
-        $events = Reservation::all();
+        $events = Reservation::orderBy('created_at','desc')->paginate(5);
         return view('Reservations.show')->with('events', $events)->with('clients', $clients)->with('pitchs', $pitchs);
     }
 
@@ -116,8 +121,11 @@ class ReservationsController extends Controller
         $event->end_date = $request->get('end_date');
         $event->client_id = $request->input('client_id');
         $event->pitch_id = $request->input('pitch_id');
-        $event->color = $request->input('color');
-
+        if ($request->get('type')=='match') {
+            $event->color = '#0D2BD2';
+        } else {
+            $event->color = '#069322';
+        }
 
         $event->save();
         $request->session()->flash('success', 'Modification faite avec succès');
