@@ -62,7 +62,8 @@ class membersController extends Controller
 
         ]);
 
-        if ($request->hasFile('avatar')) {
+         // Handle File Upload
+         if($request->hasFile('avatar')){
             // Get filename with the extension
             $filenameWithExt = $request->file('avatar')->getClientOriginalName();
             // Get just filename
@@ -70,7 +71,7 @@ class membersController extends Controller
             // Get just ext
             $extension = $request->file('avatar')->getClientOriginalExtension();
             // Filename to store
-            $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+            $fileNameToStore= $filename.'_'.time().'.'.$extension;
             // Upload Image
             $path = $request->file('avatar')->storeAs('public/avatars', $fileNameToStore);
         } else {

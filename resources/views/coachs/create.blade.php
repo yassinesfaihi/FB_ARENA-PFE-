@@ -4,21 +4,16 @@
 @section('PageHeader')
 @endsection
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col">
-            <div class="card">
-                
-                <div class="card-header">{{ __('ajouter un nouveau entraîneur') }}</div>
-
-                <div class="card-body">
+<div class="panel important">
+ 
+                <h3>{{ __('ajouter un nouveau entraîneur') }}</h3>
                     <form method="POST" enctype='multipart/form-data'  action="{{ route('coachs.store') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">nom d'entraîneur</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">Nom d'entraîneur:</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-5">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  required autocomplete="name" enctype="multipart/form-data" autofocus>
 
                                 @error('name')
@@ -29,9 +24,9 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="salary" class="col-md-4 col-form-label text-md-right">salaire</label>
+                            <label for="salary" class="col-md-4 col-form-label text-md-right">Salaire:</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-5">
                                 <input id="salary" type="text" class="form-control @error('salary') is-invalid @enderror" name="salary"  required autocomplete="salary"  autofocus>
 
                                 @error('salary')
@@ -42,9 +37,9 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="hire_date" class="col-md-4 col-form-label text-md-right">Date</label>
+                            <label for="hire_date" class="col-md-4 col-form-label text-md-right">Date d'embauche:</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-5">
                                 <input id="hire_date" type="Date" class="form-control @error('hire_date') is-invalid @enderror" name="hire_date"  required autocomplete="hire_date" autofocus>
 
                                 @error('hire_date')
@@ -56,9 +51,9 @@
                         </div>
                         
                         <div class="form-group row">
-                            <label for="academy_id" class="col-md-4 col-form-label text-md-right">{{ __('nom de l academie') }}</label>
+                            <label for="academy_id" class="col-md-4 col-form-label text-md-right">{{ __('Nom de l academie:') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-5">
                             
                                 <select id="academy_id"  class="form-control" name="academy_id"  required >
                                     @foreach ($academies as $academy)
@@ -69,11 +64,10 @@
                                   </select>
                             </div>
                         </div>
-                    </div>
                     <div class="form-group row">
-                        <label for="avatar" class="col-md-4 col-form-label text-md-right">image d'entreneur</label>
+                        <label for="avatar" class="col-md-4 col-form-label text-md-right">avatar</label>
 
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <input id="avatar" type="file" class=" @error('avatar') is-invalid @enderror" name="avatar"  autofocus>
 
                             @error('avatar')
@@ -84,20 +78,17 @@
                         </div>
                     </div>
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('ajouter un entreneur') }}
+                            <div class="col-md-5 offset-md-4">
+                                <button type="submit" class="btn btn-primary bt">
+                                    {{ __('ajouter un entraîneur') }}
                                     
                                 </button>
-                                <a href="{{ route('coachs.index') }}"><button  type="button" class="btn btn-primary fa fa-arrow-left "> retour </button>
+                                <a href="{{ route('coachs.index') }}"><button  type="button" class="btn btn-primary bt "> <i class="fa fa-arrow-left" aria-hidden="true"></i>retour </button>
                             </div>
                         </div>
                     </form>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
+      
 @endsection
 
 

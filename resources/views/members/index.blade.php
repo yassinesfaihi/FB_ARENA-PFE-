@@ -6,20 +6,17 @@ Gestion des membres
 Gestion des membres
 @endsection
 @section('content')
-@include("partials.alerts")
- <div class="row justify-content-center">
-  <div class="col">
-    <div class="card">
-      <div class="card-header">
-        <div class="row">
-          <div class="col-md-6 ">
-            <h5>liste des members
-            </h5>
+<div class="panel important">
+  @include("partials.alerts")
+        <div class="row m-2">
+          <div class="col-md-6 text-left">
+            <h2 class="text-left">liste des members
+            </h2>
           </div>
           <div class="col-md-4">
             <form   action="{{ route('members.search')}}" method="get" >
               <div class="input-group">
-                <input type="search" name="search" class="form-control">
+                <input type="search" name="search" class="form-control mr-1">
                 <span class="input-group-perpend">
                   <button type="submit" class="btn btn-primary">chercher
                   </button>
@@ -34,64 +31,79 @@ Gestion des membres
             </a>
           </div>
         </div>
-      </div>
-      <div class="">
-        @if (!$members->isEmpty())
-        @foreach ($members as $member)
-          
-        <section class="items mt-3">
-          <div class="container">
-            <!-- item-->
-            <div class="item">
-              <div class="row bg-white has-shadow">
-                <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
-                  <div class="item-title d-flex align-items-center">
-                    <div class="image has-shadow"><img src="/storage/avatars/{{$member->avatar}}" alt="..." class="img-fluid"></div>
-                    <div class="text">
-                      <h3 class="h4">{{$member->name}} </h3><small>appartietnt a l'academie {{$member->academy->name}}</small>
-                    </div>
-                  </div>
-                  <div class="item-date"><span class="hidden-sm-down"><i class="fa fa-phone" aria-hidden="true"></i>
-                    {{$member->phone}}</span></div>
-                </div>
-                <div class="right-col col-lg-6  float-right">
-                  <form method="POST" class="text-nowrap float-right" action="{{ route('members.destroy',$member->member_id) }}">
-                    {{ csrf_field() }}
-                    {{ method_field('delete') }}
-                  <div class="float-right"> 
-                    <a href="{{ route('members.show',$member->member_id) }}">
-                      <button  type="button" class="btn btn-primary">
-                        <i class="fa fa-info-circle" aria-hidden="true">
-                        </i>
-                      </button>
-                    </a>
-                    <a href="{{ route('members.edit',$member->member_id) }}"> 
-                      <button  type="button" class="btn btn-warning">
-                        <i class="fa fa-pencil-square-o" aria-hidden="true">
-                        </i>
-                      </button>
-                    </a>
-                    <button type="submit"   class="btn btn-danger" onclick="return confirm('Tu es sure?')">
-                      <i class="fa fa-trash-o" aria-hidden="true">
+        <div class="container mt-3">
+          @if (!$members->isEmpty())
+          <table class="table table-striped table-condensed table-sm " >
+             <thead>
+                <tr>
+                  <th scope="col">
+                  </th>
+                   <th scope="col">nom
+                   </th>
+                   <th scope="col">numero de telephone
+                   </th>
+                   <th scope="col">etat de l'abonnement
+                  </th>
+                  <th scope="col">academie
+                  </th>
+                   <th scope="col" style="width:97px">operations
+                   </th>
+                </tr>
+             </thead>
+             <tbody>
+                <tr>
+                   @foreach ($members as $member)
+                   <td><img  src="/storage/avatars/{{$member->avatar}}" alt="..." class="img-fluid">
+                   </td>
+                   <td>{{ $member->name }}
+                  </td>
+                   <td>{{ $member->phone }}
+                   </td>
+                   @if ($member->state=='paye')
+                   <td ><span class="green">{{ $member->state}}
+                  </td> 
+                   @else
+                   <td><span class="red">{{ $member->state }}
+                  </td>
+                   @endif
+                   <td>{{ $member->academy->name}}
+                  </td>
+                   <td>
+                      <a href="{{ route('members.show',$member->member_id) }}">
+                      <button  type="button" class="btn btn-primary bt-op">
+                      <i class="fa fa-info-circle" aria-hidden="true">
                       </i>
-                    </button> 
-                          </form>
-                </div>
-              </div>
-            </div>
-          </div>
-          </section>
-        @endforeach
-      <div class="align-items-center "> {{$members->links()}}</div>
-        
-      </div>
-      @else
-      <div >
-        <p  class="text-center">pas de membres
-        </p>
-      </div>
-      @endif
-    </div>
-  </div>
+                      </button>
+                      </a>
+                      <a href="{{ route('members.edit',$member->member_id) }}"> 
+                      <button  type="button" class="btn btn-warning bt-op">
+                      <i class="fa fa-pencil-square-o" aria-hidden="true">
+                      </i>
+                      </button>
+                      </a>
+                      <form method="POST" class="text-nowrap float-right" action="{{ route('members.destroy',$member->member_id) }}">
+                         {{ csrf_field() }}
+                         {{ method_field('delete') }}
+                         <button type="submit"   class="btn btn-danger bt-op" onclick="return confirm('confirmer la suppression?')">
+                         <i class="fa fa-trash-o" aria-hidden="true">
+                         </i>
+                         </button> 
+                      </form>
+                   </td>
+                </tr>
+                @endforeach
+             </tbody>
+             <tfoot >
+          </table >
+          <div class="text-right"> {{$members->links()}} </div>
+       </div>
+       @else
+       <div >
+          <p  class="text-center">pas de membre
+          </p>
+       </div>
+       @endif
+    
+      
  </div>
 @endsection

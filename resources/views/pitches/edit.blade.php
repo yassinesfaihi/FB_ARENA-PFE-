@@ -4,20 +4,17 @@
 @section('PageHeader')
 @endsection
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col">
-            <div class="card">
-                
-                <div class="card-header">modifier les informations du terrain {{  $pitch->name}}</div>
+<div class="panel important">
+              
+                <h3>Modifier les informations du terrain {{  $pitch->name}}</h3>
 
-                <div class="card-body">
+          
                     <form method="POST" action="{{ route('pitches.update', $pitch) }}">
                         
                         @csrf
                         {{method_field('PUT')}}
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('nom du terrain') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('nom du terrain:') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $pitch->name }}" required autocomplete="name" autofocus>
@@ -32,7 +29,7 @@
                       
                          
                         <div class="form-group row">
-                            <label for="capacity" class="col-md-4 col-form-label text-md-right">{{ __('capacite en nombre de joueurs') }}</label>
+                            <label for="capacity" class="col-md-4 col-form-label text-md-right">{{ __('capacite en nombre de joueurs:') }}</label>
 
                             <div class="col-md-6">
                                 <input id="capacity" type="text" class="form-control  @error('capacity') is-invalid @enderror" name="capacity" value="{{ $pitch->capacity }}" required autocomplete="capacity">
@@ -47,7 +44,7 @@
                         
         
                         <div class="form-group row">
-                            <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('prix') }}</label>
+                            <label for="price" class="col-md-4 col-form-label text-md-right">{{ __('prix:') }}</label>
 
                             <div class="col-md-6">
                                 <input id="price" type="text" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ $pitch->price }}" required autocomplete="price">
@@ -61,7 +58,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="state" class="col-md-4 col-form-label text-md-right">{{ __('disponibilité') }}</label>
+                            <label for="state" class="col-md-4 col-form-label text-md-right">{{ __('Disponibilité:') }}</label>
 
                             <div class="col-md-6">
                             
@@ -78,17 +75,14 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary bt">
                                     {{ __('enregistrer') }}
                                 </button>
-                                <a href="{{ route('pitches.index') }}"><button  type="button" class="btn btn-primary fa fa-arrow-left "> retour </button>
+                                <a href="{{ route('pitches.index') }}"><button  type="button" class="btn btn-primary bt "><i class="fa fa-arrow-left" aria-hidden="true"></i> retour </button>
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
+        
 </div>
 @endsection
 

@@ -11,7 +11,7 @@ class Academy extends Model
         'name', 'pitch_id'
     ];
 
-        public function pitch(){
+    public function pitch(){
         return $this->belongsTo(Pitch::class ,'pitch_id');
     }
     public function members(){

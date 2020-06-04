@@ -6,20 +6,17 @@ Gestion des utilisateurs
 Gestion des utilisateurs
 @endsection
 @section('content')
-@include("partials.alerts")
-<div class="row justify-content-center">
-  <div class="col">
-    <div class="card">
-      <div class="card-header">
-        <div class="row">
-          <div class="col-md-6 ">
-            <h5>liste des utilisateurs
-            </h5>
+<div class="panel important">
+  @include("partials.alerts")
+  <div class="row m-2">
+    <div class="col-md-6 text-left">
+            <h2 class="text-left">liste des utilisateurs
+            </h2>
           </div>
           <div class="col-md-4">
             <form   action="{{ route('users.search')}}" method="get" >
               <div class="input-group">
-                <input type="search" name="search" class="form-control">
+                <input type="search" name="search" class="form-control mr-1">
                 <span class="input-group-perpend">
                   <button type="submit" class="btn btn-primary">chercher
                   </button>
@@ -34,10 +31,9 @@ Gestion des utilisateurs
             </a>
           </div>
         </div>
-      </div>
-      <div>
+        <div class="container mt-3">
         @if (!$users->isEmpty())
-        <table class="table table-bordered" style=" table-layout: auto">
+        <table class="table table-striped table-condensed table-sm ">
           <thead>
             <tr>
               <th scope="col">id
@@ -46,7 +42,7 @@ Gestion des utilisateurs
               </th>
               <th scope="col">email
               </th>
-              <th scope="col" style="width:150px"  >operations
+              <th scope="col" style="width:97px"  >operations
               </th>
             </tr>
           </thead>
@@ -61,13 +57,13 @@ Gestion des utilisateurs
               </td>
               <td>
                   <a href="{{ route('users.show',$user->id) }}">
-                    <button  type="button" class="btn btn-primary">
+                    <button  type="button" class="btn btn-primary bt-op ">
                       <i class="fa fa-info-circle" aria-hidden="true">
                       </i>
                     </button>
                   </a>
                   <a href="{{ route('users.edit',$user->id) }}"> 
-                    <button  type="button" class="btn btn-warning">
+                    <button  type="button" class="btn btn-warning bt-op">
                       <i class="fa fa-pencil-square-o" aria-hidden="true">
                       </i>
                     </button>
@@ -80,7 +76,7 @@ Gestion des utilisateurs
                     <form method="POST" class="text-nowrap float-right" action="{{route('users.destroy',$user->id) }}">
                       {{ csrf_field() }}
                       {{ method_field('delete') }}
-                    <button type="submit"   class="btn btn-danger" onclick="return confirm('Tu es sure?')" >
+                    <button type="submit"   class="btn btn-danger bt-op" onclick="return confirm('confirmer la suppression?')" >
                       <i class="fa fa-trash-o" aria-hidden="true">
                       </i>
                     </button> 
@@ -91,7 +87,7 @@ Gestion des utilisateurs
           </tbody>
           <tfoot >
         </table >
-        {{$users->links()}} 
+        <div class="text-right"> {{$users->links()}} </div>
       </div>
       @else
       <div >
@@ -100,6 +96,5 @@ Gestion des utilisateurs
       </div>
       @endif
     </div>
-  </div>
-</div>
+  
 @endsection

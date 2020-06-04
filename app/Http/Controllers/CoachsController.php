@@ -54,7 +54,7 @@ class CoachsController extends Controller
 
         $this->validate($request, [
             'name' => ['required', 'string', 'max:255'],
-            'salary' => ['required', 'numeric'],
+            'salary' => ['required', 'numeric', 'digits:2'],
             'hire_date' => ['required', 'Date'],
             'avatar' => ['image', 'max:3999'],
 
@@ -89,7 +89,7 @@ class CoachsController extends Controller
         $coach->avatar = $fileNameToStore;
 
         $coach->save();
-        $request->session()->flash('success', 'entreneur creé avec succès');
+        $request->session()->flash('success', 'entraîneur creé avec succès');
 
 
         return redirect('coachs');
@@ -131,7 +131,7 @@ class CoachsController extends Controller
     {
         $this->validate($request, [
             'name' => ['required', 'string', 'max:255'],
-            'salary' => ['required', 'numeric'],
+            'salary' => ['required', 'numeric', 'digits:2'],
             'hire_date' => ['required', 'Date'],
             'avatar' => ['image', 'max:3999'],
 

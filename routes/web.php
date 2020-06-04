@@ -49,7 +49,7 @@ Route::resource('/members', 'MembersController');
 Route::get('/members-search', 'MembersController@search')->name('members.search');
 //************************ 
 
-//************** entreneurs routes ************
+//************** coaches routes ************
 Route::resource('/coachs', 'CoachsController');
 Route::get('/coachs-search', 'CoachsController@search')->name('coachs.search');
 //************************ 
@@ -59,7 +59,7 @@ Route::resource('/Reservations', 'ReservationsController');
 Route::get('/Reservations/display', 'ReservationsController@show');
 //************************ 
 
-//************** Statistiques routes ************
+//************** Stats routes ************
 Route::resource('/stats', 'statsController')->middleware('checkrole');
 //***********************
 

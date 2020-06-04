@@ -4,20 +4,15 @@
 @section('PageHeader')
 @endsection
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col">
-            <div class="card">
-                
-                <div class="card-header">modifier les informations du terrain {{  $academy->name}}</div>
+<div class="panel important">     
+                <h3> Les informations de l'academie{{  $academy->name}}</h3>
 
-                <div class="card-body">
                     <form method="POST" action="{{ route('academies.update', $academy) }}">
                         
                         @csrf
                         {{method_field('PUT')}}
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ $academy->name }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __("Nom du l'academie:") }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"  required autocomplete="name" value="{{$academy->name}}" autofocus>
@@ -30,7 +25,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="pitch_id" class="col-md-4 col-form-label text-md-right">{{ __('nom du terrain') }}</label>
+                            <label for="pitch_id" class="col-md-4 col-form-label text-md-right">{{ __('Nom du terrain:') }}</label>
 
                             <div class="col-md-6">
                             
@@ -43,17 +38,14 @@
                                   </select>
                             </div>
                         </div>
-                    </div>
-                       
-
-                      
-
+                   
+                
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary bt">
                                     {{ __('enregistrer') }}
                                 </button>
-                                <a href="{{ route('academies.index') }}"><button  type="button" class="btn btn-primary fa fa-arrow-left "> retour </button>
+                                <a href="{{ route('academies.index') }}"><button  type="button" class="btn btn-primary bt"><i class="fa fa-arrow-left" aria-hidden="true"></i> retour </button>
                             </div>
                         </div>
                     </form>

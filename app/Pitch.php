@@ -16,11 +16,11 @@ class Pitch extends Model
         return $this->belongsTo(User::class);
     }
     public function academies()
-    {
-        return $this->hasMany(Academy::class);
-    }
-    public function pitch()
-    {
-        return $this->hasMany(Reservation::class);
-    }
+{
+    return $this->hasMany(Academy::class, 'pitch_id');
+}
+    public function reservations()
+{
+    return $this->hasMany(Reservation::class ,'pitch_id');
+}
 }

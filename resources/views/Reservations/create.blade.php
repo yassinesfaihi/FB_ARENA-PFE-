@@ -31,7 +31,7 @@
           <label for="color">choisir coleur:</label>
           <input type="color" class="form-control" name="color" id="color" required> 
           <label for="start_date">Entrer Date Debut:</label>
-          <input type="datetime-local" class="form-control" name="start_date" id="start_date" required>
+          <input type="datetime-local" class="form-control" name="start_date" id="start_date" step="3600"required>
           <label for="end_date">Entrer Date Fin:</label>
           <input type="datetime-local" class="form-control" name="end_date" id="end_date" required>
           <label for="client_id" >{{ __('nom de client:') }}</label>

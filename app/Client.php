@@ -10,4 +10,9 @@ class Client extends Model
     protected $fillable = [
         'name', 'phone','adress'
     ];
+
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class ,'client_id');
+    }
 }

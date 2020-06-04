@@ -6,20 +6,17 @@ Gestion des terrain
 Gestion des terrain
 @endsection
 @section('content')
-@include("partials.alerts")
-<div class="row justify-content-center">
-  <div class="col">
-    <div class="card">
-      <div class="card-header">
-        <div class="row">
-          <div class="col-md-6 ">
-            <h5>liste des terrains
-            </h5>
+<div class="panel important">
+  @include("partials.alerts")
+        <div class="row m-2">
+          <div class="col-md-6 text-left">
+            <h2 class="text-left" >liste des terrains
+            </h2>
           </div>
           <div class="col-md-4">
             <form   action="{{ route('pitches.search')}}" method="get" >
               <div class="input-group">
-                <input type="search" name="search" class="form-control">
+                <input type="search" name="search" class="form-control mr-1">
                 <span class="input-group-perpend">
                   <button type="submit" class="btn btn-primary">chercher
                   </button>
@@ -34,10 +31,9 @@ Gestion des terrain
             </a>
           </div>
         </div>
-      </div>
-      <div>
+        <div class="container mt-3">
         @if (!$pitches->isEmpty())
-        <table class="table table-bordered" style=" table-layout: auto">
+        <table class="table table-striped table-condensed table-sm ">
           <thead>
             <tr>
               <th scope="col">numero
@@ -46,7 +42,7 @@ Gestion des terrain
               </th>
               <th scope="col">diponibilité
               </th>
-              <th scope="col" style="width:150px"  >operations
+              <th scope="col" style="width:97px"  >operations
               </th>
             </tr>
           </thead>
@@ -57,36 +53,41 @@ Gestion des terrain
               </td>
               <td>{{ $pitch->name }}
               </td>
-              <td>{{ $pitch->state }}
+              @if ($pitch->state=="disponible" )
+              <td><span class="green">{{ $pitch->state }}</span>
+              @else
+              <td><span class="red">{{ $pitch->state }}</span>
+              @endif
               </td>
               <td>
                   <a href="{{ route('pitches.show',$pitch->pitch_id) }}">
-                    <button  type="button" class="btn btn-primary">
+                    <button  type="button" class="btn btn-primary bt-op">
                       <i class="fa fa-info-circle" aria-hidden="true">
                       </i>
                     </button>
                   </a>
                   <a href="{{ route('pitches.edit',$pitch->pitch_id) }}"> 
-                    <button  type="button" class="btn btn-warning">
+                    <button  type="button" class="btn btn-warning bt-op">
                       <i class="fa fa-pencil-square-o" aria-hidden="true">
                       </i>
                     </button>
                   </a>
-                  <form method="POST" class="text-nowrap float-right" action="{{ route('pitches.destroy',$pitch->pitch_id) }}">
+                  <form method="POST" class="text-nowrap float-right " action="{{ route('pitches.destroy',$pitch->pitch_id) }}">
                     {{ csrf_field() }}
                     {{ method_field('delete') }}
-                  <button type="submit"   class="btn btn-danger" onclick="return confirm('Tu es sure?')">
+                  <button type="submit"   class="btn btn-danger bt-op" onclick="return confirm('confirmer la suppression?')">
                     <i class="fa fa-trash-o" aria-hidden="true">
                     </i>
                   </button> 
                       </form>
                   </td>
             </tr>
+           
             @endforeach
           </tbody>
           <tfoot >
         </table >
-        {{$pitches->links()}} 
+        <div class="text-right"> {{$pitches->links()}} </div>
       </div>
       @else
       <div >
@@ -95,6 +96,5 @@ Gestion des terrain
       </div>
       @endif
     </div>
-  </div>
-</div>
+  
 @endsection
