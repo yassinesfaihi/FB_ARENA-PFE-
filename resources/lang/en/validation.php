@@ -176,6 +176,13 @@ return [
         'available'             => 'disponible',
         'size'                  => 'taille',
         'phone'                 =>  'numero',
+        'salary'                =>  'salaire',
+        'capacity'              =>  'capacite',
+        'price'                =>  'prix',
+        'state'                =>  'etat',
+        'start_date'                =>  'date debut',
+        'end_date'                =>  'date fin ',
+
+
     ],
-    
 ];

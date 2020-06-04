@@ -59,7 +59,12 @@ class ReservationsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {    
+        $this -> validate($request ,[
+        
+        'start_date' => ['unique:reservations'],
+
+]);
         $events = new Reservation();
         $events->type = $request->get('type');
         $events->start_date = $request->get('start_date');
@@ -74,7 +79,7 @@ class ReservationsController extends Controller
         }
         
         $events->save();
-        return redirect('Reservations')->with('success', 'réservation créer avec succès');
+        return redirect('Reservations')->with('success', 'réservation crée avec succès');
     }
 
     /**

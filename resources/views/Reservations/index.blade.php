@@ -1,3 +1,5 @@
+
+  
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,13 +15,14 @@
   <link rel="dns-prefetch" href="//fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
   <!-- Styles -->
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <link href="{{ asset('css/app1.css') }}" rel="stylesheet">
+  
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="{{ asset('css/app1.css') }}" rel="stylesheet">
+
 </head>
 <body>
   
@@ -55,9 +58,31 @@
 </nav>
 <main role="main">
   <section>
-    <div class="panel important"> {!! $calendar->calendar() !!}
-      {!! $calendar->script() !!}</div>
-   
+    <div class="panel important">
+      @include("partials.alerts")
+
+      <br>
+      <div class="col-8 m-2">
+              
+              
+               <div class="col-md-2 text-left">
+     
+               </div>
+               <div class="col-md-8 text-left">
+              </div>
+              <div class="col-md-2 text-right">
+                <a href="Reservations/display" class="btn btn-primary">Liste</a>
+                <a href="{{ route('Reservations.create')}}" class="btn btn-primary">Ajouter</a>
+
+    
+              </div>
+             </div>
+             <br><br>
+             <div class="col-8 mt-3">
+               {!! $calendar->calendar() !!}
+           {!! $calendar->script() !!}
+      </div>
+     </div>
   </section>
 </main>
 

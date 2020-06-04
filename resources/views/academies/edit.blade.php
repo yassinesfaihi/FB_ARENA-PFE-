@@ -5,7 +5,7 @@
 @endsection
 @section('content')
 <div class="panel important">     
-                <h3> Les informations de l'academie{{  $academy->name}}</h3>
+                <h3> Les informations de l'academie {{  $academy->name}}</h3>
 
                     <form method="POST" action="{{ route('academies.update', $academy) }}">
                         
