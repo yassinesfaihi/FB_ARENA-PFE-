@@ -54,7 +54,7 @@ Gestion des entraîneurs
                 <tr>
                    @foreach ($coachs as $coach)
                    
-                   <td><img  src="/storage/avatars/{{$coach->avatar}}" alt="..." class="img-fluid">
+                   <td><img  src="/storage/avatars/{{$coach->avatar}}" alt="..." class="t-avatar">
                    </td>
                    <td>{{ $coach->name }}
                   </td>

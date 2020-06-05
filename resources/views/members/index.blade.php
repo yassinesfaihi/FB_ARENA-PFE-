@@ -53,7 +53,7 @@ Gestion des membres
              <tbody>
                 <tr>
                    @foreach ($members as $member)
-                   <td><img  src="/storage/avatars/{{$member->avatar}}" alt="..." class="img-fluid">
+                   <td><img  src="/storage/avatars/{{$member->avatar}}" alt="avatar" >
                    </td>
                    <td>{{ $member->name }}
                   </td>
