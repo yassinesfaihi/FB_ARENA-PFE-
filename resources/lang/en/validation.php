@@ -2,7 +2,20 @@
 <?php
 
 return [
+    'custom' => [
+        'start_date' => [
+            'unique' => 'date deja reservé changer du date ou changer le terrain',
+        ],
+        'salary' => [
+            'digits_between:1,3' => 'le salaire doir etre entre 100 et 999',
+        ],
+        'end_date' => [
+            'after' => 'la date de fin doit etre apres la date du debut',
+        ],
+    ],
     /*
+
+    
     |--------------------------------------------------------------------------
     | Validation Language Lines
     |--------------------------------------------------------------------------
@@ -129,11 +142,7 @@ return [
     |
     */
 
-    'custom' => [
-        'start_date' => [
-            'unique' => 'date deja reservé changer du date ou changer le terrain',
-        ],
-    ],
+    
 
     /*
     |--------------------------------------------------------------------------

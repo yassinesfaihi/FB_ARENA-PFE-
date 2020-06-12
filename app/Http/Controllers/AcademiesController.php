@@ -54,7 +54,7 @@ class AcademiesController extends Controller
     {
         
         $this -> validate($request ,[
-            'name' => ['required', 'string', 'max:255', 'unique:academies'],
+            'name' => ['required', 'string', 'max:20', 'unique:academies'],
    
     ]);
     
@@ -113,7 +113,7 @@ class AcademiesController extends Controller
     public function update(Request $request, $academy_id)
     {        
         $this -> validate($request ,[
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:20'],
            
 
     ]);

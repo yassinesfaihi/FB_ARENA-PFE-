@@ -66,10 +66,10 @@ class UsersController extends Controller
     {
         
         $this -> validate($request ,[
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:20'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'phone' => ['required', 'numeric', 'digits:8', 'unique:users'],
-            'adress' => ['required', 'string', 'max:255'],
+            'adress' => ['required', 'string', 'max:20'],
 
     ]);
     // password verification is not required when the current user is the admin , because the system automatically generate th pw
@@ -156,10 +156,10 @@ return redirect('users');
     public function update(Request $request, $id)
     {        
             $this -> validate($request ,[
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:20'],
             'email' => ['required', 'string', 'email', 'max:255'],
             'phone' => ['required', 'numeric', 'digits:8'],
-            'adress' => ['required', 'string', 'max:255'],
+            'adress' => ['required', 'string', 'max:20'],
 
     ]);
     if (Auth::user()->id==$id){

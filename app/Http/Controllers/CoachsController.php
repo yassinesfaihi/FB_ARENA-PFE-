@@ -53,8 +53,8 @@ class CoachsController extends Controller
     {
 
         $this->validate($request, [
-            'name' => ['required', 'string', 'max:255'],
-            'salary' => ['required', 'numeric', 'digits:2'],
+            'name' => ['required', 'string', 'max:20'],
+            'salary' => ['required', 'numeric', 'digits_between:1,3'],
             'hire_date' => ['required', 'Date'],
             'avatar' => ['image', 'max:3999'],
 
@@ -130,8 +130,8 @@ class CoachsController extends Controller
     public function update(Request $request, $coach_id)
     {
         $this->validate($request, [
-            'name' => ['required', 'string', 'max:255'],
-            'salary' => ['required', 'numeric', 'digits:2'],
+            'name' => ['required', 'string', 'max:20'],
+            'salary' => ['required', 'numeric', 'digits_between:1,3'],
             'hire_date' => ['required', 'Date'],
             'avatar' => ['image', 'max:3999'],
 

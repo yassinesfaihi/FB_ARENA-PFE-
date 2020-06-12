@@ -54,10 +54,10 @@ class PitchesController extends Controller
     {
         
         $this -> validate($request ,[
-            'name' => ['required', 'string', 'max:255', 'unique:pitches'],
+            'name' => ['required', 'string', 'max:20', 'unique:pitches'],
             'capacity' => ['required', 'numeric', 'digits:2'],
             'price' => ['required', 'numeric', 'digits:2'],
-            'state' => ['required', 'string', 'max:255',],
+            'state' => ['required', 'string', 'max:20',],
 
     ]);
     
@@ -120,10 +120,10 @@ class PitchesController extends Controller
     public function update(Request $request, $pitch_id)
     {        
         $this -> validate($request ,[
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:20'],
             'capacity' => ['required', 'numeric', 'digits:2'],
             'price' => ['required', 'numeric', 'digits:2'],
-            'state' => ['required', 'string', 'max:255',],
+            'state' => ['required', 'string', 'max:20',],
 
     ]);
     

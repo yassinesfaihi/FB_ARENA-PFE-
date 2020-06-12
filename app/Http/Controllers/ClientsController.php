@@ -54,9 +54,9 @@ class ClientsController extends Controller
     {
         
         $this -> validate($request ,[
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:20'],
             'phone' => ['required', 'numeric', 'digits:8', 'unique:clients'],
-            'adress' => ['required', 'string', 'max:255'],
+            'adress' => ['required', 'string', 'max:20'],
 
     ]);
     
@@ -117,9 +117,9 @@ class ClientsController extends Controller
     public function update(Request $request, $client_id)
     {        
             $this -> validate($request ,[
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:20'],
             'phone' => ['required', 'numeric', 'digits:8'],
-            'adress' => ['required', 'string', 'max:255'],
+            'adress' => ['required', 'string', 'max:20'],
 
     ]);
   

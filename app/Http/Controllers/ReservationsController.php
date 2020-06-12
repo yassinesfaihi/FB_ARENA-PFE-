@@ -65,7 +65,8 @@ class ReservationsController extends Controller
 
         'start_date' => [ Rule::unique('reservations')->where(function($query) use ($request) {
             $query->where('pitch_id', 'LIKE','%'.$request->pitch_id.'%');
-          })]
+          })],
+          'end_date'=> ['required','date','after:start_date'],
 
         ]);
         $events = new Reservation();
@@ -128,7 +129,7 @@ class ReservationsController extends Controller
             'start_date' => [ Rule::unique('reservations')->where(function($query) use ($request) {
                 $query->where('pitch_id', 'LIKE','%'.$request->pitch_id.'%');
               })],
-              'end_date'=> 'required,datetime,before:start_date',
+              'end_date'=> ['required','date','after_or_equal:start_date'],
             ]);
 
         $event = Reservation::find($reservation_id);

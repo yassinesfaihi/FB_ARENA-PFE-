@@ -36,7 +36,7 @@ Route::get('/users-search', 'UsersController@search')->name('users.search');
 //************************ 
 
 //************** clients routes ************
-Route::resource('/clients', 'ClientsController')->middleware('checkrole');
+Route::resource('/clients', 'ClientsController');
 Route::get('/clients-search', 'ClientsController@search')->name('clients.search');
 //************************ 
 
@@ -46,23 +46,23 @@ Route::get('/pitches-search', 'PitchesController@search')->name('pitches.search'
 //************************ 
 
 //************** academies routes ************
-Route::resource('/academies', 'AcademiesController')->middleware('checkrole');
+Route::resource('/academies', 'AcademiesController');
 Route::get('/academies-search', 'AcademiesController@search')->name('academies.search');
 //************************ 
 
 
 //************** members routes ************
-Route::resource('/members', 'MembersController')->middleware('checkrole');
+Route::resource('/members', 'MembersController');
 Route::get('/members-search', 'MembersController@search')->name('members.search');
 //************************ 
 
 //************** coachs routes ************
-Route::resource('/coachs', 'CoachsController')->middleware('checkrole');
+Route::resource('/coachs', 'CoachsController');
 Route::get('/coachs-search', 'CoachsController@search')->name('coachs.search');
 //************************ 
 
 //************** Reservations routes ************
-Route::resource('/Reservations', 'ReservationsController')->middleware('checkrole');;
+Route::resource('/Reservations', 'ReservationsController');
 Route::get('/Reservations/display', 'ReservationsController@show');
 //************************ 
 

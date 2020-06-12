@@ -54,10 +54,10 @@ class membersController extends Controller
     {
 
         $this->validate($request, [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:20'],
             'age' => ['required', 'numeric', 'digits_between:1,2'],
             'phone' => ['required', 'numeric', 'digits:8', 'unique:users'],
-            'state' => ['required', 'string', 'max:255'],
+            'state' => ['required', 'string', 'max:20'],
             'avatar' => ['image', 'max:3999'],
 
         ]);
@@ -135,10 +135,10 @@ class membersController extends Controller
     public function update(Request $request, $member_id)
     {
         $this->validate($request, [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:20'],
             'age' => ['required', 'numeric', 'digits_between:1,2'],
             'phone' => ['required', 'numeric', 'digits:8', 'unique:users'],
-            'state' => ['required', 'string', 'max:255'],
+            'state' => ['required', 'string', 'max:20'],
             'avatar' => ['image', 'max:3999'],
 
         ]);

@@ -38,6 +38,11 @@
               <label for="end_date " class="col-md-4 col-form-label text-md-right">Entrer Date Fin:</label>
               <div class="col-md-5">
               <input type="datetime-local" class="form-control " name="end_date"  id="end_date" required>
+              @error('end_date')
+              <span class="invalid-feedback " role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+              @enderror
              </div>
           </div>
 

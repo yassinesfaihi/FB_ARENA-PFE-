@@ -12,7 +12,7 @@
                  <hr>
                  <div class="form-group row ">
                     <label for="type "class="col-md-4 col-form-label text-md-right" >Entrer le type de réservation:</label>
-                    <select id="type"  class="form-control col-md-5" name="type"  required >
+                    <select id="type"  class="form-control col-md-5" name="type" value="{{$event->type}}"  required >
                       <option value="Tournoi">Tournoi</option>
                       <option value="match">match</option>
                     </select>
