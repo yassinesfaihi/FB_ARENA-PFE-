@@ -1,0 +1,52 @@
+    body {
+        background: url('/img/add-bg.jpg') no-repeat center center fixed;
+        background-size: cover;
+        backdrop-filter: blur(2px);
+        height: 100vh;
+    }
+    
+    .card {
+        width: 80%;
+        margin: 80px;
+        border-radius: 5px;
+        color: white;
+    }
+    
+    .card-header {
+        color: black;
+        text-align: center;
+        background-color: #00a63f;
+        border-radius: 50px;
+        color: white;
+        font-weight: bold;
+    }
+    
+    .form-group {
+        color: rgb(0, 0, 0);
+    }
+    
+    input {
+        padding: 0.5rem 1 rem;
+        border: 2px solid rbga(230, 230, 230, 0.6);
+        font-size: 1.1rem;
+        margin-bottom: 22px;
+        transition: .3s;
+    }
+    
+    input:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    
+    input:focus {
+        background-color: #fff;
+        border: 2px solid rbga(30, 85, 250, 0, 47);
+    }
+    
+    .btn-primary {
+        background-color: #00a63f;
+        ;
+    }
+    
+    .btn-primary:hover {
+        background-color: #0d8b3e;
+    }

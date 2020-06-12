@@ -18,7 +18,7 @@ class checkrole
         if (auth()->user()->role == 'prop') {
             return $next($request);
         } elseif (auth()->user()->role == 'gerant') {
-            return redirect('profilUser');
+            return redirect('404');
         } else
             return redirect('profil');
     }

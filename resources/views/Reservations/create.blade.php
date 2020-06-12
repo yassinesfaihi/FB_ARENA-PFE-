@@ -4,6 +4,7 @@
 @section('PageHeader')
 @endsection
 @section('content')
+
 <div class="panel important">
   <h3>{{ __('ajouter une reservation') }}</h3>
 

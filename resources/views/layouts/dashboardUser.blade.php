@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- CSRF Token -->
       <meta name="csrf-token" content="{{ csrf_token() }}">
-      <title>@yield('title')</title>
+      <title>F BALL</title>
       <!-- Scripts -->
       <script src="{{ asset('js/app.js') }}" defer></script>
       <!-- custom icons -->
@@ -16,6 +16,8 @@
       <!-- Styles -->
       <link href="{{ asset('css/app.css') }}" rel="stylesheet">
       <link href="{{ asset('css/app1.css') }}" rel="stylesheet">
+      <link href="{{ asset('css/stats.css') }}" rel="stylesheet">
+
    </head>
    <header role="banner">
       <h1>FOOTBALL ARENA</h1>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.navlog')
 
 @section('content')
 <div class="container">
@@ -14,11 +14,11 @@
                         </div>
                     @endif
 
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }},
+                    {{ __('avant de continuer, veuillez verifier votre boite mail') }}
+                    {{ __("si vous n'avez pas recu le mail de verification") }},
                     <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                         @csrf
-                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
+                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('recevoir un autre email') }}</button>.
                     </form>
                 </div>
             </div>

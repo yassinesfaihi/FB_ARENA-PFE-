@@ -1,0 +1,17 @@
+.stat_resglob {
+    background-color: #734ae8;
+    background: #00a63f;
+    color: white;
+    font-weight: bold;
+}
+
+.stat_clientsglob {
+    background: rgb(0, 153, 255);
+    color: white;
+}
+
+.stat_membresglob {
+    background-color: #abe9cd;
+    background: rgb(255, 153, 0);
+    color: white;
+}

@@ -1,0 +1,107 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+.fimanager:before {
+    display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.flaticon-001-id-card:before { content: "\f100"; }
+.flaticon-002-bank:before { content: "\f101"; }
+.flaticon-003-bank:before { content: "\f102"; }
+.flaticon-004-bitcoin:before { content: "\f103"; }
+.flaticon-005-brain:before { content: "\f104"; }
+.flaticon-006-stat:before { content: "\f105"; }
+.flaticon-007-computer:before { content: "\f106"; }
+.flaticon-008-credit-card:before { content: "\f107"; }
+.flaticon-009-file:before { content: "\f108"; }
+.flaticon-010-file:before { content: "\f109"; }
+.flaticon-011-stats:before { content: "\f10a"; }
+.flaticon-012-cogwheel:before { content: "\f10b"; }
+.flaticon-013-hand:before { content: "\f10c"; }
+.flaticon-014-light:before { content: "\f10d"; }
+.flaticon-015-coin:before { content: "\f10e"; }
+.flaticon-016-stats:before { content: "\f10f"; }
+.flaticon-017-money-bag:before { content: "\f110"; }
+.flaticon-018-briefcase:before { content: "\f111"; }
+.flaticon-019-van:before { content: "\f112"; }
+.flaticon-020-exchange:before { content: "\f113"; }
+.flaticon-021-money:before { content: "\f114"; }
+.flaticon-022-transfer:before { content: "\f115"; }
+.flaticon-023-wing:before { content: "\f116"; }
+.flaticon-024-mountain:before { content: "\f117"; }
+.flaticon-025-paper:before { content: "\f118"; }
+.flaticon-026-presentation:before { content: "\f119"; }
+.flaticon-027-safebox:before { content: "\f11a"; }
+.flaticon-028-savings:before { content: "\f11b"; }
+.flaticon-029-scale:before { content: "\f11c"; }
+.flaticon-030-shop:before { content: "\f11d"; }
+.flaticon-031-stats:before { content: "\f11e"; }
+.flaticon-032-team:before { content: "\f11f"; }
+.flaticon-033-time:before { content: "\f120"; }
+.flaticon-034-vision:before { content: "\f121"; }
+.flaticon-035-wallet:before { content: "\f122"; }
+.flaticon-036-website:before { content: "\f123"; }
+
+$font-Flaticon-001-id-card: "\f100";
+$font-Flaticon-002-bank: "\f101";
+$font-Flaticon-003-bank: "\f102";
+$font-Flaticon-004-bitcoin: "\f103";
+$font-Flaticon-005-brain: "\f104";
+$font-Flaticon-006-stat: "\f105";
+$font-Flaticon-007-computer: "\f106";
+$font-Flaticon-008-credit-card: "\f107";
+$font-Flaticon-009-file: "\f108";
+$font-Flaticon-010-file: "\f109";
+$font-Flaticon-011-stats: "\f10a";
+$font-Flaticon-012-cogwheel: "\f10b";
+$font-Flaticon-013-hand: "\f10c";
+$font-Flaticon-014-light: "\f10d";
+$font-Flaticon-015-coin: "\f10e";
+$font-Flaticon-016-stats: "\f10f";
+$font-Flaticon-017-money-bag: "\f110";
+$font-Flaticon-018-briefcase: "\f111";
+$font-Flaticon-019-van: "\f112";
+$font-Flaticon-020-exchange: "\f113";
+$font-Flaticon-021-money: "\f114";
+$font-Flaticon-022-transfer: "\f115";
+$font-Flaticon-023-wing: "\f116";
+$font-Flaticon-024-mountain: "\f117";
+$font-Flaticon-025-paper: "\f118";
+$font-Flaticon-026-presentation: "\f119";
+$font-Flaticon-027-safebox: "\f11a";
+$font-Flaticon-028-savings: "\f11b";
+$font-Flaticon-029-scale: "\f11c";
+$font-Flaticon-030-shop: "\f11d";
+$font-Flaticon-031-stats: "\f11e";
+$font-Flaticon-032-team: "\f11f";
+$font-Flaticon-033-time: "\f120";
+$font-Flaticon-034-vision: "\f121";
+$font-Flaticon-035-wallet: "\f122";
+$font-Flaticon-036-website: "\f123";

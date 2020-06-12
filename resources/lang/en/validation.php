@@ -130,8 +130,8 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'start_date' => [
+            'unique' => 'date deja reservé changer du date ou changer le terrain',
         ],
     ],
 

@@ -8,6 +8,7 @@ use MaddHatter\LaravelFullcalendar\Facades\Calendar;
 use App\Reservation;
 use App\Client;
 use App\Pitch;
+use Illuminate\Validation\Rule; 
 
 class ReservationsController extends Controller
 {
@@ -61,10 +62,12 @@ class ReservationsController extends Controller
     public function store(Request $request)
     {    
         $this -> validate($request ,[
-        
-        'start_date' => ['unique:reservations'],
 
-]);
+        'start_date' => [ Rule::unique('reservations')->where(function($query) use ($request) {
+            $query->where('pitch_id', 'LIKE','%'.$request->pitch_id.'%');
+          })]
+
+        ]);
         $events = new Reservation();
         $events->type = $request->get('type');
         $events->start_date = $request->get('start_date');
@@ -104,6 +107,7 @@ class ReservationsController extends Controller
      */
     public function edit($reservation_id)
     {
+        
         $clients = Client::all();
         $pitchs = Pitch::all();
         $event = Reservation::find($reservation_id);
@@ -119,6 +123,13 @@ class ReservationsController extends Controller
      */
     public function update(Request $request, $reservation_id)
     {
+        $this -> validate($request ,[
+
+            'start_date' => [ Rule::unique('reservations')->where(function($query) use ($request) {
+                $query->where('pitch_id', 'LIKE','%'.$request->pitch_id.'%');
+              })],
+              'end_date'=> 'required,datetime,before:start_date',
+            ]);
 
         $event = Reservation::find($reservation_id);
         $event->type = $request->get('type');

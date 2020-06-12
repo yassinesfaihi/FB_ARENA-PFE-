@@ -19,6 +19,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/about', function () {
+    return view('about');
+});
+
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
@@ -29,7 +36,7 @@ Route::get('/users-search', 'UsersController@search')->name('users.search');
 //************************ 
 
 //************** clients routes ************
-Route::resource('/clients', 'ClientsController');
+Route::resource('/clients', 'ClientsController')->middleware('checkrole');
 Route::get('/clients-search', 'ClientsController@search')->name('clients.search');
 //************************ 
 
@@ -39,27 +46,27 @@ Route::get('/pitches-search', 'PitchesController@search')->name('pitches.search'
 //************************ 
 
 //************** academies routes ************
-Route::resource('/academies', 'AcademiesController');
+Route::resource('/academies', 'AcademiesController')->middleware('checkrole');
 Route::get('/academies-search', 'AcademiesController@search')->name('academies.search');
 //************************ 
 
 
 //************** members routes ************
-Route::resource('/members', 'MembersController');
+Route::resource('/members', 'MembersController')->middleware('checkrole');
 Route::get('/members-search', 'MembersController@search')->name('members.search');
 //************************ 
 
-//************** coaches routes ************
-Route::resource('/coachs', 'CoachsController');
+//************** coachs routes ************
+Route::resource('/coachs', 'CoachsController')->middleware('checkrole');
 Route::get('/coachs-search', 'CoachsController@search')->name('coachs.search');
 //************************ 
 
 //************** Reservations routes ************
-Route::resource('/Reservations', 'ReservationsController');
+Route::resource('/Reservations', 'ReservationsController')->middleware('checkrole');;
 Route::get('/Reservations/display', 'ReservationsController@show');
 //************************ 
 
-//************** Stats routes ************
+//************** Statistiques routes ************
 Route::resource('/stats', 'statsController')->middleware('checkrole');
 //***********************
 
